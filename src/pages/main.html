@@ -29,21 +29,25 @@
         <ul>
           <li
             data-tab-group="pathing"
-            data-tab-target="#custom"
+            data-tab-target="#pa_custom"
             class="tab tab-active"
           >
             Custom
           </li>
-          <li data-tab-group="pathing" data-tab-target="#waypoint" class="tab">
+          <li
+            data-tab-group="pathing"
+            data-tab-target="#pa_waypoint"
+            class="tab"
+          >
             Waypoint
           </li>
-          <li data-tab-group="pathing" data-tab-target="#player" class="tab">
+          <li data-tab-group="pathing" data-tab-target="#pa_player" class="tab">
             Player
           </li>
         </ul>
         <div class="tab-content">
           <div
-            id="custom"
+            id="pa_custom"
             data-tab-content
             data-tab-group="pathing"
             class="active-tab"
@@ -63,7 +67,7 @@
             </div>
           </div>
 
-          <div id="waypoint" data-tab-content data-tab-group="pathing">
+          <div id="pa_waypoint" data-tab-content data-tab-group="pathing">
             <h1 class="inline">Waypoint Pathing</h1>
             <p class="inline">Path to a saved waypoint</p>
             <div>
@@ -138,9 +142,50 @@
             </div>
           </div>
 
-          <div id="player" data-tab-content data-tab-group="pathing">
+          <div id="pa_player" data-tab-content data-tab-group="pathing">
             <h1 class="inline">Player Pathing</h1>
             <p class="inline">Path to or follow a player within range.</p>
+          </div>
+        </div>
+      </div>
+      <div class="guarding tabgroup">
+        <ul>
+          <li
+            data-tab-group="guarding"
+            data-tab-target="#ga_custom"
+            class="tab tab-active"
+          >
+            Custom
+          </li>
+          <li
+            data-tab-group="guarding"
+            data-tab-target="#ga_waypoint"
+            class="tab"
+          >
+            Waypoint
+          </li>
+          <li
+            data-tab-group="guarding"
+            data-tab-target="#ga_player"
+            class="tab"
+          >
+            Player
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="ga_custom"
+            data-tab-content
+            data-tab-group="guarding"
+            class="active-tab"
+          >
+            <h1>Custom</h1>
+          </div>
+          <div id="ga_waypoint" data-tab-content data-tab-group="guarding">
+            <h1>Waypoint</h1>
+          </div>
+          <div id="ga_player" data-tab-content data-tab-group="guarding">
+            <h1>Player</h1>
           </div>
         </div>
       </div>
