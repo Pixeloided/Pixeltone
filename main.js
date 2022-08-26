@@ -84,7 +84,7 @@ function createWindow() {
     minHeight: 960,
     icon: path.join(__dirname, "assets/icons/32x32.png"),
     webPreferences: {
-      preload: path.join(__dirname, "global-preload.js"),
+      preload: path.join(__dirname, "preload.js"),
       devTools: process.env.NODE_ENV == "production" ? "true" : "false",
     },
     nodeIntegration: false,
@@ -121,7 +121,6 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  createWindow();
   app.on("activate", function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
@@ -146,6 +145,7 @@ app.whenReady().then(() => {
       },
     });
   });
+  createWindow();
 });
 
 app.on("window-all-closed", () => {
