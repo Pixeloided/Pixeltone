@@ -1,0 +1,3 @@
+electron
+mineflayer
+discord-rpc

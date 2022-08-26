@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  font-family: "Poppins", sans-serif;
+  --bg-color: rgb(46, 48, 63);
+  --in-between: hsla(235, 11%, 59%, 0.1);
+  --fg-color: hsla(0, 0%, 98%, 1);
+  --pop-accent: hsla(354, 65%, 59%, 1);
+  --pop-accent-2: hsla(150, 48%, 52%, 1);
+  background-color: var(--bg-color);
+}
+.clamp-top {
+  top: 0;
+}
+.clamp-left {
+  left: 0;
+}
+.clamp-right {
+  right: 0;
+}
+.clamp-bottom {
+  bottom: 0;
+}
+.link {
+  cursor: pointer;
+}
+.no-decor {
+  text-decoration: none;
+}
+::selection {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.noselect {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.button {
+  box-shadow: 2px 2px 18px -10px var(--fg-color);
+  background-color: var(--fg-color);
+  border: none;
+  border-radius: 21px;
+  display: inline-block;
+  cursor: pointer;
+  color: var(--bg-color);
+  font-size: 1.2rem;
+  padding: 9px 17px;
+  margin-top: 8px;
+  text-decoration: none;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+.darker-input {
+  background-color: rgb(172, 172, 172);
+}
+.inline {
+  display: inline-block;
+}
+.block {
+  display: block;
+}
+.button:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(192, 193, 206);
+}
+.button:active {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  top: 1px;
+}
+.important {
+  background-color: var(--pop-accent-2);
+}
+.important::placeholder {
+  color: var(--pop-accent-2);
+}
+.important:not(:placeholder-shown) {
+  background-color: var(--pop-accent-2);
+}
+.button.important:hover {
+  background-color: rgb(63, 173, 118);
+}
+.dangerous {
+  background-color: var(--pop-accent);
+}
+.dangerous::placeholder {
+  color: var(--pop-accent);
+}
+.dangerous:not(:placeholder-shown) {
+  background-color: var(--pop-accent);
+}
+.button.dangerous:hover {
+  background-color: rgb(201, 68, 82);
+}
+.text-input {
+  outline: none;
+  border: none;
+  border-radius: 21px;
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  font-size: 1.2rem;
+  padding: 9px 17px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+.text-input:focus {
+  box-shadow: 10px 10px 19px -3px rgba(133, 255, 159, 0.7);
+  transition: all 0.2s ease-in-out;
+}
+.bigger {
+  width: 300px;
+  height: 80px;
+  border-radius: 20px;
+  font-size: 2em;
+}
+@keyframes popText {
+  0%,
+  100% {
+    color: var(--pop-accent);
+  }
+  50% {
+    color: var(--pop-accent-2);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes slowBorder {
+  0%,
+  100% {
+    border-color: var(--fg-color);
+  }
+  50% {
+    border-color: var(--bg-color);
+  }
+}
+@keyframes popBg {
+  0%,
+  100% {
+    background-color: var(--fg-color);
+  }
+  50% {
+    background-color: var(--pop-accent-2);
+  }
+}

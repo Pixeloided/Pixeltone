@@ -1,0 +1,18 @@
+{
+  "name": "pixeltone",
+  "version": "0.0.1",
+  "description": "A Minecraft Botting Aplication",
+  "main": "main.js",
+  "author": "Pixeloid",
+  "license": "GNU GPLv3",
+  "devDependencies": {
+    "electron": "^18.3.4"
+  },
+  "scripts": {
+    "start": "electron --trace-warnings ."
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "mineflayer": "^4.4.0"
+  }
+}

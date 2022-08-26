@@ -1,0 +1,40 @@
+html {
+  overflow: hidden;
+}
+.logo img {
+  width: 50%;
+  image-rendering: pixelated;
+  border: 3px solid var(--pop-accent-2);
+}
+.v {
+  background-color: var(--in-between);
+  color: var(--pop-accent-2);
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  user-select: text;
+}
+.footer {
+  background-color: rgba(185, 187, 207, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 110%;
+  transform: translateX(-10px);
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 0px -7px 17px 9px rgba(185, 187, 207, 0.1);
+}
+.footer h4 {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  width: 50%;
+}
+.footer-right {
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  text-align: right;
+  width: 50%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixeltone</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script src="../js/functions.js"></script>
+    <script src="../js/main-functions.js"></script>
+    <script src="../js/tabs.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/87ac66ee3e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <form action="../pages/home.html">
+      <button
+        class="button important no-decor clamp-top clamp-left"
+        onclick="goHome();"
+      >
+        <i class="fa-solid fa-house-chimney"></i>
+      </button>
+    </form>
+    <div class="clamp-left">
+      <div class="pathing tabgroup">
+        <ul>
+          <li
+            data-tab-group="pathing"
+            data-tab-target="#custom"
+            class="tab tab-active"
+          >
+            Custom
+          </li>
+          <li data-tab-group="pathing" data-tab-target="#waypoint" class="tab">
+            Waypoint
+          </li>
+          <li data-tab-group="pathing" data-tab-target="#player" class="tab">
+            Player
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="custom"
+            data-tab-content
+            data-tab-group="pathing"
+            class="active-tab"
+          >
+            <h1 class="inline">Custom pathing</h1>
+            <p class="inline">Path to specified coordinates</p>
+            <div>
+              <label for="xpath">X: </label>
+              <input type="number" name="xpath" id="xpath" class="tab-input" />
+              <label for="ypath">Y: </label>
+              <input type="number" name="ypath" id="ypath" class="tab-input" />
+              <label for="zpath">Z: </label>
+              <input type="number" name="zpath" id="zpath" class="tab-input" />
+              <button class="button important">
+                <i class="fa-solid fa-wave-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="waypoint" data-tab-content data-tab-group="pathing">
+            <h1 class="inline">Waypoint Pathing</h1>
+            <p class="inline">Path to a saved waypoint</p>
+            <div>
+              <select
+                name="wppath"
+                id="wppath"
+                class="tab-input"
+                onchange="updateCoordinates()"
+              ></select>
+              <div class="wp-num inline" style="margin: 0px">
+                <p id="wpc" style="margin: 0px"></p>
+              </div>
+              <button class="button important" title="Path to waypoint">
+                <i class="fa-solid fa-wave-square"></i>
+              </button>
+              <button
+                class="button dangerous"
+                onclick="removeWaypointSchedule()"
+                title="Remove waypoint"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <hr />
+            <div>
+              <label for="wpname">Name: </label>
+              <input
+                type="text"
+                name="wpname"
+                class="tab-input"
+                style="width: 14%"
+                id="wpname"
+              />
+              <label for="wpx">X: </label>
+              <input
+                type="number"
+                name="wpx"
+                class="tab-input"
+                style="width: 11%"
+                id="wpx"
+              />
+              <label for="wpy">Y: </label>
+              <input
+                type="number"
+                name="wpy"
+                class="tab-input"
+                style="width: 11%"
+                id="wpy"
+              />
+              <label for="wpz">Z: </label>
+              <input
+                type="number"
+                name="wpz"
+                class="tab-input"
+                style="width: 11%"
+                id="wpz"
+              />
+              <button
+                class="button important"
+                title="Fill with current coordinates"
+                onclick="fillCurrentCoordinates()"
+              >
+                <i class="fa-solid fa-arrows-down-to-line"></i>
+              </button>
+              <button
+                class="button important"
+                onclick="addWaypointSchedule()"
+                title="Create Waypoint"
+              >
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="player" data-tab-content data-tab-group="pathing">
+            <h1 class="inline">Player Pathing</h1>
+            <p class="inline">Path to or follow a player within range.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-contents">
+      <div
+        class="chat"
+        id="chat"
+        style="transition: all 0.5s ease-in-out"
+      ></div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="chat-text"
+          class="text-input"
+          placeholder="Chat message"
+          maxlength="1024"
+        />
+        <button class="button important">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+      <div class="coordinates">
+        <a
+          onclick="setClipboard(`${document.getElementById('x').innerText} ${document.getElementById('y').innerText} ${document.getElementById('z').innerText}`)"
+          class="coord-holder"
+          tooltip="Clock to copy coordinates"
+        >
+          X: <span class="coordinate x" id="x">null</span> Y:
+          <span class="coordinate y" id="y">null</span> Z:
+          <span class="coordinate z" id="z">null</span>
+        </a>
+      </div>
+      <div class="progress" id="progress">
+        <div class="hearts">
+          <div class="bar" id="bar" style="width: 100%"></div>
+        </div>
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+        <img src="../../assets/empty-heart.png" alt="Heart Image" />
+      </div>
+    </div>
+  </body>
+</html>

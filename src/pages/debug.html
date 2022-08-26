@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixeltone</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <script src="../js/functions.js"></script>
+    <script src="https://kit.fontawesome.com/87ac66ee3e.js" crossorigin="anonymous"></script>
+    <style>
+      html {font-family: 'Poppins', sans-serif; overflow: hidden;}
+      .content {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(50, 50, 50, 0.3);
+        padding: 20px;
+        border-radius: 10px;
+        border: 3px solid var(--fg-color);
+        animation: slowBorder 2s infinite;
+        user-select: none;
+      }
+      .v {
+        background-color: var(--in-between);
+        color: var(--pop-accent-2);
+        border-radius: 4px;
+        padding-left: 5px;
+        padding-right: 5px;
+        user-select: text;
+      }
+    </style>
+  </head>
+    <div class="content">
+      Node.js Version <span id="node-version" class="v"></span><br>
+      Chromium Version <span id="chrome-version" class="v"></span><br>
+      Electron Version <span id="electron-version" class="v"></span><br>
+      Project Version <span id="project-version" class="v"></span>
+    </div>
+  </body>
+</html>

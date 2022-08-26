@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "Seven Segment Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Seven Segment Regular"),
+    url("../../assets/fonts/7seg.woff") format("woff");
+}
+@keyframes popBg {
+  0% {
+    background-color: var(--pop-accent-2);
+  }
+  100% {
+    background-color: var(--fg-color);
+  }
+}
+[data-tab-content] {
+  display: none;
+}
+[data-tab-content].active-tab {
+  display: block;
+}
+[data-tab-content].active-tab > h1:first-of-type {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.wp-num {
+  background-color: rgb(153, 162, 179);
+  border-radius: 15px;
+  padding: 9px 17px;
+  color: rgba(133, 255, 159, 0.7);
+}
+.tab-content {
+  border-radius: 15px;
+  z-index: 0;
+  width: 43%;
+  margin-left: 40px;
+  background-color: var(--fg-color);
+  top: 0;
+  padding: 15px;
+}
+.tab-content div label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.tab-input {
+  border: none;
+  outline: none;
+  border-radius: 21px;
+  background-color: rgb(136, 146, 165);
+  color: var(--bg-color);
+  font-size: 1.2rem;
+  padding: 9px 17px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  width: 20%;
+}
+.tab-input:focus {
+  box-shadow: 10px 10px 19px -3px rgba(133, 255, 159, 0.7);
+  transition: all 0.2s ease-in-out;
+}
+.pathing ul {
+  z-index: 1;
+  margin-bottom: 0px;
+  margin-left: 40px;
+  padding-left: 0px;
+  padding-right: 3vw;
+  height: 40px;
+  width: 40vw;
+  list-style-type: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.pathing ul li {
+  margin-left: 15px;
+}
+.tab {
+  background-color: var(--fg-color);
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  padding: 10px;
+  box-shadow: 0px -23px 30px -8px rgba(0, 0, 0, 0.8);
+  transition: all 0.2s ease-in-out;
+}
+.tab-active {
+  padding-top: 20px;
+  color: var(--pop-accent-2);
+  transition: all 0.2s ease-in-out;
+}
+.tab:hover {
+  padding-top: 15px;
+  color: var(--pop-accent);
+  transition: all 0.2s ease-in-out;
+}
+
+.message {
+  margin: 2px;
+}
+.chat {
+  width: 650px;
+  height: 750px;
+  background-color: var(--fg-color);
+  border-radius: 10px;
+  /* box-shadow: 4px 4px 21px -1px rgba(250, 250, 250, 0.5); */
+  overflow-y: auto;
+  font-size: 1.1em;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.chat::-webkit-scrollbar {
+  width: 1em;
+}
+.chat::-webkit-scrollbar-track {
+  background-color: hsl(235, 11%, 59%);
+  border-radius: 10px;
+}
+.chat::-webkit-scrollbar-thumb {
+  background-color: var(--pop-accent-2);
+  border-radius: 10px;
+}
+.chat-contents {
+  margin-right: 25px;
+  margin-top: 15px;
+  right: 0;
+  top: 0;
+  position: fixed;
+  user-select: text;
+}
+.chat-contents .chat-input .text-input {
+  width: 562px;
+  height: 30px;
+}
+.chat-contents .chat-input {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.coordinates {
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Seven Segment Regular";
+  font-weight: normal;
+  font-size: 2em;
+}
+.coord-holder {
+  background-color: var(--in-between);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.coord-holder:hover {
+  background-color: hsla(0, 0%, 90%, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+.coordinate {
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: var(--fg-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  user-select: text;
+}
+.progress {
+  width: 100%;
+  text-align: center;
+  user-select: none;
+}
+.hearts {
+  position: relative;
+  width: 91.01%;
+  transform: translateX(26px);
+}
+.progress img {
+  padding: 0;
+  margin: -2.2px;
+  transform: translateY(20px);
+  image-rendering: pixelated;
+  width: 9.4%;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.bar {
+  margin: 0 auto;
+  position: absolute;
+  margin-top: 22px;
+  height: 45px;
+  background-color: rgb(230, 59, 59);
+  transition: all 0.4s ease-in-out;
+}
+.hp {
+  position: absolute;
+  transform: translateY(5px);
+}
